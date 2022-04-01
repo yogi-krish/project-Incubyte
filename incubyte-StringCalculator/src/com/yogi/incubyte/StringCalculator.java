@@ -8,6 +8,18 @@ public class StringCalculator {
 			return 0;
 		}
 		
+		if(numbers.startsWith("//")) {
+			String delimiter=numbers.charAt(2)+"";
+			String numbers1=numbers.substring(4, numbers.length());
+			String[] numbersArray=numbers1.split(delimiter);
+			int sum=0;
+			for(String num:numbersArray) {
+				sum += to_Int(num);
+			}
+			
+			return sum;
+		}
+		
 		else if(numbers.contains(",")) {
 			String[] numbersArray = numbers.split(",|\n");
 			int sum=0;
@@ -20,6 +32,8 @@ public class StringCalculator {
 		else {
 			return to_Int(numbers);
 		}
+		
+		
 	}
 
 	public static int to_Int(String str) {
