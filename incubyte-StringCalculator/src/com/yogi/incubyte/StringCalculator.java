@@ -44,7 +44,7 @@ public class StringCalculator {
 		}
 		
 		if(negatives.size()>0) {
-			throw new RuntimeException("negatives ");
+			throw new RuntimeException("negatives not allowed "+negatives.toString().replace("[", "").replace("]", ""));
 		}
 		return sum;
 	}
