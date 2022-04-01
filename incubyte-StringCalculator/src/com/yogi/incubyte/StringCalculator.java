@@ -10,11 +10,19 @@ public class StringCalculator {
 		
 		else if(numbers.contains(",")) {
 			String[] numbersArray = numbers.split(",");
-			return Integer.parseInt(numbersArray[0])+Integer.parseInt(numbersArray[1]);
-			
+			int sum=0;
+			for(String num:numbersArray) {
+				sum += to_Int(num);
+			}
+			return sum;
 		}
+		
 		else {
-			return Integer.parseInt(numbers);
+			return to_Int(numbers);
 		}
+	}
+
+	public static int to_Int(String str) {
+		return Integer.parseInt(str);
 	}
 }
