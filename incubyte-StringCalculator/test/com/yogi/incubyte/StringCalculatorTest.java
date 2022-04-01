@@ -7,8 +7,13 @@ import org.junit.jupiter.api.Test;
 class StringCalculatorTest {
 
 	@Test
-	void testEmptyString() {
+	public void testEmptyString() {
 		assertEquals(0, StringCalculator.add(""));
+	}
+	
+	@Test
+	public void testSingleCharacter() {
+		assertEquals(2, StringCalculator.add("2"));
 	}
 
 }
