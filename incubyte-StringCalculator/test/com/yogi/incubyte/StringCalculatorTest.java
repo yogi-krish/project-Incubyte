@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class StringCalculatorTest {
 
 	@Test
-	public void testEmptyString() {
+	public void testEmptyString() throws Exception {
 		assertEquals(0, StringCalculator.add(""));
 	}
 	
@@ -42,8 +42,8 @@ class StringCalculatorTest {
 			StringCalculator.add("-1,0,4");
 			
 		}
-		catch(Exception e) {
-			
+		catch(RuntimeException e) {
+			assertEquals("negatives not allowed -1", e.getMessage());
 		}
 	}
 }

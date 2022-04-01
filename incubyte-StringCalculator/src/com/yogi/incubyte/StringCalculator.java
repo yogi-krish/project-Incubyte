@@ -1,5 +1,8 @@
 package com.yogi.incubyte;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 	
 	public static int add(String numbers) {
@@ -33,9 +36,16 @@ public class StringCalculator {
 		
 		String[] numbersArray = numbers.split(delimiter);
 		int sum=0;
-		for(String num:numbersArray)
+		List<Integer> negatives=new ArrayList<Integer>();
+		for(String num:numbersArray) {
 			sum += to_Int(num);
+			if(to_Int(num)<0)
+				negatives.add(to_Int(num));
+		}
 		
+		if(negatives.size()>0) {
+			throw new RuntimeException("negatives ");
+		}
 		return sum;
 	}
 }
