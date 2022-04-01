@@ -35,4 +35,15 @@ class StringCalculatorTest {
 	public void testdifferentDelimiters() {
 		assertEquals(3, StringCalculator.add("//;\n1;2"));
 	}
+	
+	@Test
+	public void testforNegatives() {
+		try {
+			StringCalculator.add("-1,0,4");
+			
+		}
+		catch(Exception e) {
+			
+		}
+	}
 }
