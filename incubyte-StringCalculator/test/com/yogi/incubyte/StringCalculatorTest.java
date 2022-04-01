@@ -15,5 +15,10 @@ class StringCalculatorTest {
 	public void testSingleCharacter() {
 		assertEquals(2, StringCalculator.add("2"));
 	}
+	
+	@Test
+	public void testTwoCharacters() {
+		assertEquals(3, StringCalculator.add("1,2"));
+	}
 
 }
